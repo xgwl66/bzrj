@@ -270,6 +270,7 @@
         const monthColors = Array.from({length:12}, (_,i) => 
             `hsl(${(i * 30)}, 60%, 90%)`);
 
+// 修改 setDefaultDate 函数（时区问题修复）
 function setDefaultDate() {
     const today = new Date();
     // 使用本地时间构建日期字符串
@@ -278,7 +279,6 @@ function setDefaultDate() {
     const day = String(today.getDate()).padStart(2, '0');
     document.getElementById('date-input').value = `${year}-${month}-${day}`;
 }
-
 
         function renderTable() {
             const tbody = document.getElementById('worklog').getElementsByTagName('tbody')[0];
